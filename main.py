@@ -46,8 +46,14 @@ def get_category(category_name: str):
 
 
 @app.get("/get_header")
-async def get_header(accept: str = Header(None), content_type: str = Header(None), user_agent: Header(None), host: str = Header(None)):
+async def get_header(
+    accept: str = Header(None),
+    content_type: str = Header(None),
+    user_agent: str = Header(None),
+    host: str = Header(None),
+):
     request_header = {}
+
     request_header["Accept"] = accept
     request_header["Content-Type"] = content_type
     request_header["User-Agent"] = user_agent
